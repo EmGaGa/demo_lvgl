@@ -14,9 +14,10 @@ LVGL_DIR_NAME ?= lvgl
 
 include $(LVGL_DIR)/lvgl/lvgl.mk
 include $(LVGL_DIR)/lv_drivers/lv_drivers.mk
+include $(LVGL_DIR)/lv_examples/lv_examples.mk
 
-CFLAGS:=-w -O2 -O3 -g0 -std=c99 -I$(LVGL_DIR)/lvgl -I$(LVGL_DIR)/lv_drivers \
-        -DPLAYER_DEBUG_VER -DLV_CONF_INCLUDE_SIMPLE -DLV_LVGL_H_INCLUDE_SIMPLE
+CFLAGS:=-w -O2 -O3 -g0 -std=c99 -I$(LVGL_DIR)/lvgl -I$(LVGL_DIR)/lv_drivers -I$(LVGL_DIR)/lv_examples \
+        -DPLAYER_DEBUG_VER -DLV_CONF_INCLUDE_SIMPLE -DLV_LVGL_H_INCLUDE_SIMPLE -DLV_EX_CONF_INCLUDE_SIMPLE
 
 .PHONY: all
 .DEFAULT: all

@@ -8,6 +8,7 @@
 #include <sys/time.h>
 #include <linux/fb.h>
 #include "lvgl.h"
+#include "lv_examples.h"
 #include "display/fbdev.h"
 #include "indev/evdev.h"
 

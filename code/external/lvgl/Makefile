@@ -9,6 +9,7 @@ LVGL_DIR_NAME ?= lvgl
 
 include $(LVGL_DIR)/lvgl/lvgl.mk
 include $(LVGL_DIR)/lv_drivers/lv_drivers.mk
+include $(LVGL_DIR)/lv_examples/lv_examples.mk
 
 OBJDIR:=./__tmp__
 OBJEXT ?= .o
@@ -18,8 +19,8 @@ COBJS = $(CSRCS:.c=$(OBJEXT))
 SRC = $(ASRCS) $(CSRCS)
 OBJ = $(AOBJS) $(COBJS)
 
-CFLAGS:=-g -Wall -std=c99 -I$(LVGL_DIR)/lvgl -I$(LVGL_DIR)/lv_drivers \
-	-DLV_CONF_INCLUDE_SIMPLE -DLV_LVGL_H_INCLUDE_SIMPLE
+CFLAGS:=-g -Wall -std=c99 -I$(LVGL_DIR)/lvgl -I$(LVGL_DIR)/lv_drivers -I$(LVGL_DIR)/lv_examples \
+	-DLV_CONF_INCLUDE_SIMPLE -DLV_LVGL_H_INCLUDE_SIMPLE -DLV_EX_CONF_INCLUDE_SIMPLE
 
 .PHONY: all
 .DEFAULT: all
